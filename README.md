@@ -2,6 +2,7 @@
 # Highly customizable weather app
 
 Created with: Nuxt 3, TypeScript, Tailwind, Pinia
+
 Live version: https://fabulous-churros-13adbb.netlify.app/
 
 
