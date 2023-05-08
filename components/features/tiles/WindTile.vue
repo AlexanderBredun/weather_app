@@ -77,7 +77,7 @@ const getCardinalDirection = (angle: number):string => {
                     </h2>
                     <nuxt-icon name="compassrose" class="img-compass" />
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                        <img class="block w-10/12 h-10/12 m-auto" :style="{'transform': `rotate(${weather.current_weather.winddirection}deg)`}" src="compass_arrow.svg" alt="">
+                        <img class="block w-10/12 h-10/12 m-auto" :style="{'transform': `rotate(${weather.current_weather.winddirection}deg)`}" src="/compass_arrow.svg" alt="">
                     </div>
                    
                 </div>

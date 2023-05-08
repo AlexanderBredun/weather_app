@@ -48,12 +48,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import AddMoreInfoDropdown from '@/components/features/locationUtility/AddMoreInfoDropdown'
-import CityNameHeading from '@/components/shared/CityNameHeading'
-import CloseLocationButton from '@/components/features/locationUtility/CloseLocationButton'
-import ChangeLayoutButton from '@/components/features/locationUtility/ChangeLayoutButton'
-import Loader from '@/components/shared/Loader'
-import TilesFlow from '@/components/layouts/TilesFlow'
+import AddMoreInfoDropdown from '@/components/features/locationUtility/AddMoreInfoDropdown.vue'
+import CityNameHeading from '@/components/shared/CityNameHeading.vue'
+import CloseLocationButton from '@/components/features/locationUtility/CloseLocationButton.vue'
+import ChangeLayoutButton from '@/components/features/locationUtility/ChangeLayoutButton.vue'
+import Loader from '@/components/shared/Loader.vue'
+import TilesFlow from '@/components/layouts/TilesFlow.vue'
 
 const store = useMainStore()
 const { locations, loading, slideToLocation, editLayout } = storeToRefs(store)

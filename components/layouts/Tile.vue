@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import Loader from '@/components/shared/Loader.vue'
-    import TileSettings from '@/components/features/tiles/ui/TileSettings'
+    import TileSettings from '@/components/features/tiles/ui/TileSettings/index.vue'
     import RefreshDataButton from '@/components/shared/RefreshDataButton.vue'
     import {defineProps, watch} from 'vue'
 

@@ -22,7 +22,7 @@
 import MainInfoTile from '@/components/features/tiles/MainInfoTile.vue'
 import HourlyWeatherTile from '@/components/features/tiles/HourlyWeatherTile.vue'
 import DailyWeatherTile from '@/components/features/tiles/DailyWeatherTile.vue'
-import SunriseTile from '@/components/features/tiles/SunriseTile'
+import SunriseTile from '@/components/features/tiles/SunriseTile/index.vue'
 import WindTile from '@/components/features/tiles/WindTile.vue'
 import { computed } from "vue"
 import { storeToRefs } from 'pinia'

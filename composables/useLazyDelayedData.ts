@@ -1,5 +1,4 @@
- // @ts-ignore
-import { FunctionArgs } from '@vueuse/core'
+
 import { useMainStore } from '@/store/index'
 import { useStructureStore, findPropertyById } from '@/store/structure'
 import weatherService from '@/services/weatherService'
@@ -12,13 +11,13 @@ import { IPos } from '~/types/IPos'
 
 const config = useRuntimeConfig()
 
-export const useLazyDelayedData = async<T extends FunctionArgs>(
+export const useLazyDelayedData = async(
     idParent: string,
     getMethod: string,
-    formatMethod: T,
+    formatMethod: string,
     posIn?: IPos,
     timezone?: string,
-): Promise<ReturnType<T>>=>{
+): Promise<any>=>{
 
     const store = useMainStore()
 const storeStructure = useStructureStore()
@@ -40,6 +39,7 @@ const { locationsStructurees } = storeToRefs(storeStructure);
                 async () => await $fetch(weatherService[getMethod](activePos.value, timezone), { baseURL: config.public['apiWeatherBase'] }),
                 data.value ? 0 : 400
             )
+               // @ts-ignore
         }, { immediate: true, transform: (e) => formatMethod ? weatherService[formatMethod](e) : e }
     )
     const isInStore = findPropertyById(locationsStructurees.value, idParent);
@@ -58,5 +58,5 @@ const { locationsStructurees } = storeToRefs(storeStructure);
          pending,
           refresh,
            error
-    } as ReturnType<T>;
+    };
   }

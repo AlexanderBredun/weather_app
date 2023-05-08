@@ -1,5 +1,4 @@
- // @ts-ignore
-import { FunctionArgs } from '@vueuse/core'
+
 
 import { ref } from 'vue'
 
@@ -8,11 +7,11 @@ let controller: AbortController = new AbortController();
 let timer: undefined | ReturnType<typeof setTimeout> = undefined;
 const loading = ref<boolean>(false)
 
-export const useFetchThrottle = async<T extends FunctionArgs>(
+export const useFetchThrottle = async(
     valueRaw: string,
     getMethod: string,
     formatMethod: Function,
-): Promise<ReturnType<T>> => {
+): Promise<any> => {
 
     const value = valueRaw.trim();
 
@@ -42,6 +41,6 @@ export const useFetchThrottle = async<T extends FunctionArgs>(
     return {
         loading,
         data
-    } as ReturnType<T>;
+    };
 
 }

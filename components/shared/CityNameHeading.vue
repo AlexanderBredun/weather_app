@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 
-    import RefreshDataButton from '@/components/shared/RefreshDataButton'
+    import RefreshDataButton from '@/components/shared/RefreshDataButton.vue'
     
     const props = defineProps({
         noRefresh: Boolean,

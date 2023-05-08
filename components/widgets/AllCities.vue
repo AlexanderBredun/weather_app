@@ -43,12 +43,12 @@
 
 <script lang="ts" setup>
 
-import SlideInSection from '@/components/layouts/SlideInSection'
+import SlideInSection from '@/components/layouts/SlideInSection.vue'
 import weatherService from '@/services/weatherService'
-import WeatherImage from '@/components/shared/ui/WeatherImage'
+import WeatherImage from '@/components/shared/ui/WeatherImage.vue'
 import { ref, watch } from 'vue';
 import { WEATHER_CODES } from '@/utils/constants'
-import Loader from '@/components/shared/Loader'
+import Loader from '@/components/shared/Loader.vue'
 import type { Ref } from "vue"
 import { IMainInfoTransformed } from '~/types/transormedData';
 

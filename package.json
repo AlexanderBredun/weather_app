@@ -27,6 +27,7 @@
   "dependencies": {
     "@nuxt/image-edge": "^1.0.0-27809804.194d2d6",
     "@pinia/nuxt": "^0.4.6",
+    "@vueuse/core": "^10.1.2",
     "dotenv": "^16.0.3",
     "nuxt-icons": "^3.1.0",
     "pinia": "^2.0.35",
