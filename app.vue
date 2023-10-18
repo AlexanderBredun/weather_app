@@ -1,62 +1,39 @@
 <template>
   <div>
     <NuxtLayout>
-    <NuxtLoadingIndicator />
-    <NuxtPage />
-  </NuxtLayout>
-  </div>
+      <NuxtLoadingIndicator />
+      <AppHeader />
+      <NuxtPage />
 
+      <SlideInPage :query="eRoutes.ADD_LOCATION">
+        <AddLocation  />
+      </SlideInPage>
+      <SlideInPage :query="eRoutes.ALL_LOCATIONS">
+        <AllLocations  />
+      </SlideInPage>
+      
+    </NuxtLayout>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { useMainStore } from './store/index'
+import { addLocalStorage, eLocalStorageKeys, eRoutes } from './shared/lib/utils';
+import { AddLocation } from './widgets/AddLocation';
+import { AllLocations } from './widgets/AllLocations';
+import { AppHeader } from './widgets/AppHeader';
+import { SlideInPage } from './widgets/SlideInPage';
 
-const store = useMainStore()
-
+const store = useMainStore();
 const { addPositionActive } = store;
+addPositionActive();
 
-addPositionActive()
-
-
+useStructureStore().$subscribe((mutation, state) => {
+	addLocalStorage(eLocalStorageKeys.STRUCTURE, [state.locationsStructurees], true);
+});
 
 
 </script>
 
 <style lang="scss">
-
-  @import "assets/styles/main";
-  html {
-    font-size: 62.5%;
-    input[type='button'] {
-      cursor: pointer;
-    }
-    input[disabled] {
-      cursor: default;
-    }
-    @media only screen and (max-width: 1560px),
-    only screen and (max-device-width: 1560px) {
-      font-size: 9.5px;
-    }
-    @media only screen and (max-width: $media_desktop),
-    only screen and (max-device-width: $media_desktop) {
-      font-size: 9px;
-    }
-    @media only screen and (max-width: $media_tablet),
-    only screen and (max-device-width: $media_tablet) {
-      font-size: 8px;
-    }
-  }
-  *{
-    box-sizing: border-box;
-  }
-  body {
-    @apply bg-gray-800;
-    @apply text-def-text;
-  
-    @apply text-base;
-  line-height: 1.2;
-  
-  min-width: 320px;
-  overflow-x: hidden;
-  }
+ 
 </style>
